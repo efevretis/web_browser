@@ -13,7 +13,7 @@ states = (
     ('htmlcomment', 'exclusive'),   # exclusive indicates when its a htmlcomment dont do anything else
 )
 
-t_ignore = ' ' # shortcut for whitespace
+t_ignore = ' \t\v\r' # shortcut for whitespace
 
 def t_htmlcomment(token):
     r'<!--'
