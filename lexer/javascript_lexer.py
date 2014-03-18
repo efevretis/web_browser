@@ -168,6 +168,20 @@ def t_RETURN(token):
     r'return'
     return token
 
+def t_IDENTIFIER(token):
+    r'[a-zA-Z][_a-zA-Z]*'
+    return token
+
+def t_NUMBER(token):
+    r'-?[0-9]+\.?[0-9]*'
+    token.value = float(token.value)
+    return token
+
+def t_STRING(token):
+    r'"(?:[^\\]|(?:\\.))*"'
+    token.value = token.value[1:-1]
+    return token
+
 
 lexer = lex.lex()
 
